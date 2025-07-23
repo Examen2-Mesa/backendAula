@@ -1,0 +1,47 @@
+
+=== REPORTE DE ENTRENAMIENTO - DATOS REALES ===
+Fecha: 2025-06-02 22:59:34
+
+DATASET UTILIZADO:
+- Archivo: dataset_estudiantes_completo.csv
+- Registros totales: 12,422
+- Estudiantes únicos: 723
+- Materias: 19
+- Períodos: 3
+- Características utilizadas: 10
+
+RENDIMIENTO DE MODELOS:
+- Modelo Regresión (R²): 0.9230
+- Error RMSE: 1.3135
+- Modelo Clasificación (Accuracy): 0.9997
+
+EVALUACIÓN DE CALIDAD:
+- R² > 0.60: ✅ Bueno
+- RMSE < 20: ✅ Aceptable
+- Accuracy > 0.70: ✅ Buena clasificación
+
+CARACTERÍSTICAS MÁS IMPORTANTES (Regresión):
+1. promedio_participacion: 0.9271
+2. porcentaje_asistencia: 0.0579
+3. promedio_notas_anterior: 0.0103
+4. promedio_exposiciones: 0.0022
+5. promedio_tareas: 0.0018
+
+DISTRIBUCIÓN DE DATOS:
+rendimiento_categoria
+Medio    10944
+Alto      1478
+
+RECOMENDACIONES PARA PRODUCCIÓN:
+- ✅ Modelo de regresión listo para predicciones
+- ✅ Modelo de clasificación disponible
+- ✅ Integrar con API FastAPI
+- 🔄 Recolectar más datos para clases minoritarias
+- 📊 Monitorear rendimiento en producción
+
+NOTAS TÉCNICAS:
+- Dataset muy desbalanceado detectado
+- Se priorizó modelo de regresión por confiabilidad
+- Considerar recolección de más datos "Alto" y "Bajo"
+
+=== FIN DEL REPORTE ===
