@@ -36,12 +36,12 @@ def seed_evaluaciones(db: Session, periodo_id: int):
 
     cantidad_por_tipo = {
         "asistencia": 10,
-        "participaciones": 3,
+        "participaciones": 5,
         "tareas": 5,
         "prácticas": 5,
         "exposiciones": 2,
         "ensayos": 2,
-        "cuestionarios": 2,
+        "cuestionarios": 5,
         "trabajo grupal": 1,
         "exámenes": 3,
         "proyecto final": 1,

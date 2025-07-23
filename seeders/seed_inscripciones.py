@@ -16,7 +16,7 @@ def seed_inscripciones(db: Session):
     if len(gestiones) != 2:
         raise Exception("❌ Asegúrate de tener creadas las gestiones 2024 y 2025.")
 
-    total_esperado = len(cursos) * 20
+    total_esperado = len(cursos) * 15
     if len(estudiantes) < total_esperado:
         raise Exception(
             f"❌ Se esperaban al menos {total_esperado} estudiantes para inscribirlos."
@@ -28,7 +28,7 @@ def seed_inscripciones(db: Session):
     for gestion in gestiones:
         idx = 0
         for curso in cursos:
-            for _ in range(20):
+            for _ in range(15):
                 estudiante = estudiantes[idx]
                 inscripciones.append(
                     Inscripcion(

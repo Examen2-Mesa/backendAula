@@ -21,7 +21,7 @@ def seed_gestion(db: Session):
         else:
             print(f"ℹ️ Gestión {g['anio']} ya existe.")
 
-        # Periodos por gestión (verificamos que nombre + gestión_id no se repitan)
+        # Periodos por gestión con nombres incluyendo el año
         periodos = [
             (
                 "Primer Trimestre",
@@ -41,15 +41,16 @@ def seed_gestion(db: Session):
         ]
 
         for nombre, ini, fin in periodos:
+            nombre_completo = f"{nombre} {g['anio']}"
             ya_existe = (
                 db.query(Periodo)
-                .filter_by(nombre=nombre, gestion_id=gestion.id)
+                .filter_by(nombre=nombre_completo, gestion_id=gestion.id)
                 .first()
             )
             if not ya_existe:
                 db.add(
                     Periodo(
-                        nombre=nombre,
+                        nombre=nombre_completo,
                         fecha_inicio=ini,
                         fecha_fin=fin,
                         gestion_id=gestion.id,

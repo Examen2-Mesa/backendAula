@@ -5,7 +5,7 @@ from app.models.curso import Curso
 def seed_cursos(db: Session):
     grados = [f"{i}° Secundaria" for i in range(1, 7)]
     paralelo = "A"
-    turno = "Tarde"
+    turno = "Mañana"
 
     for grado in grados:
         nombre = f"{grado} {paralelo} - {turno}"
@@ -16,4 +16,4 @@ def seed_cursos(db: Session):
             )
 
     db.commit()
-    print("✅ Cursos nivel secundaria (1 paralelo, turno tarde) creados.")
+    print("✅ Cursos nivel secundaria (1 paralelo, turno mañana) creados.")

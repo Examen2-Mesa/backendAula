@@ -9,8 +9,5 @@
     alembic init alembic 
     alembic revision --autogenerate -m "Primera migracion" 
     alembic upgrade head
-5. Levantar contenedor de base de datos 
-    docker-compose up -d
-6. Ejecutar 
+5. Ejecutar 
     uvicorn app.main:app --reload
-7. Ejecutar seeder de manera local 

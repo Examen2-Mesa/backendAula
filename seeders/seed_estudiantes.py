@@ -147,7 +147,7 @@ def seed_estudiantes(db: Session):
     correos_usados = set()
 
     for curso in cursos:
-        for _ in range(20):  # Solo 20 estudiantes por curso
+        for _ in range(15):  
             genero = random.choice(["Masculino", "Femenino"])
             nombre = random.choice(
                 nombres_masculinos if genero == "Masculino" else nombres_femeninos
@@ -178,5 +178,5 @@ def seed_estudiantes(db: Session):
 
     db.commit()
     print(
-        f"✅ Se insertaron {total_insertados} estudiantes (20 por curso, secundaria)."
+        f"✅ Se insertaron {total_insertados} estudiantes (15 por curso, secundaria)."
     )

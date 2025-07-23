@@ -25,15 +25,15 @@ def seed_docentes(db: Session):
     nuevos = []
 
     # Admin general
-    if "admin@gmail.com" not in existentes:
+    if "jazmin@gmail.com" not in existentes:
         nuevos.append(
             Docente(
-                nombre="Admin",
-                apellido="General",
-                telefono="70000000",
-                correo="admin@gmail.com",
-                genero="Masculino",
-                contrasena=hash_contrasena("admin"),
+                nombre="jazmin",
+                apellido="Torrez",
+                telefono="61889462",
+                correo="jazmin@gmail.com",
+                genero="Femenino",
+                contrasena=hash_contrasena("jazmin"),
                 is_doc=False,
             )
         )

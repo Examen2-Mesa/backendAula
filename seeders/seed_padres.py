@@ -76,7 +76,7 @@ apellidos = [
 def seed_padres(db: Session):
     padres = []
     usados = set()
-    for i in range(120):  # 120 padres para cubrir a todos
+    for i in range(90):  # 90 padres para cubrir a todos
         nombre = random.choice(nombres_masculinos + nombres_femeninos)
         apellido = random.choice(apellidos)
         correo = f"{nombre.lower()}.{apellido.lower()}{i}@gmail.com"

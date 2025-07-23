@@ -10,7 +10,8 @@ from typing import Dict, List, Optional
 import logging
 import os
 from jinja2 import Template
-
+from email.header import Header
+from email.utils import formataddr
 logger = logging.getLogger(__name__)
 
 class EmailService:
@@ -50,7 +51,8 @@ class EmailService:
             # Crear el mensaje
             msg = MIMEMultipart('alternative')
             msg['Subject'] = self._generar_asunto(datos_reporte, tipo_usuario)
-            msg['From'] = f"{self.from_name} <{self.from_email}>"
+            msg['From'] = formataddr((str(Header(self.from_name, 'utf-8')), self.from_email))
+           #msg['From'] = f"{self.from_name} <{self.from_email}>"
             msg['To'] = destinatario
 
             # Generar el contenido HTML
