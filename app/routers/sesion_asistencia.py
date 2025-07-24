@@ -1,3 +1,5 @@
+from operator import and_
+from app.models.sesion_asistencia import AsistenciaEstudiante
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from app.database import SessionLocal
@@ -402,13 +404,11 @@ def obtener_mis_sesiones_activas(
                 .first()
             )
 
-            # Obtener la asistencia del estudiante para esta sesión
-            from app.models.sesion_asistencia import AsistenciaEstudiante
 
             mi_asistencia = (
                 db.query(AsistenciaEstudiante)
                 .filter(
-                    crud.and_(
+                    and_(
                         AsistenciaEstudiante.sesion_id == sesion.id,
                         AsistenciaEstudiante.estudiante_id == estudiante_id,
                     )
